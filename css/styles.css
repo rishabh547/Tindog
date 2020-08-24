@@ -1,1 +1,188 @@
+/*This is the entire css code before refactoring part 1 before lecture-92 &93*/
 
+body {
+  font-family: "Montserrat";
+}
+
+#title {
+  /*Adding color to navbar & title section*/
+  background-color: #ff4c68;
+  color: #fff; /*#000 for black color of text, We could have added white to h1,but eventually h1 resides in title div*/
+}
+.container-fluid {
+  padding: 3% 15% 7%;
+  /*3% on top , 15% on left-right,7%on bottom , 7% was added in lect 88*/
+}
+
+h1 {
+  font-family: "Montserrat-Black", sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/*h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat-Bold", sans-serif;
+} We use above in case of code refactoring */
+h2 {
+  /* No need here since we used this above for all font-family: "Montserrat-Bold", sans-serif;*/
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: "Montserrat-Bold", sans-serif;
+} /*NO need h3 needed as they are specified above in code refactoring with  other headings h1,h2..h6*/
+
+p {
+  color: #8f8f8f;
+}
+
+/*HEADINGS*/
+/* Used instead of h1 .big-heading */
+/*{
+  /* Code refactoring of h1 by creating class big-heading*/
+/* font-family: "Montserrat-Black", sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+}  */
+
+/*Navigation bar*/
+.navbar {
+  padding: 0 0 4.5rem;
+  /*Earlier it was pad-bottom to get space below brand name & navbar */
+  /*Then to align tindog with text below it Meet other.. we set top and right pad to 0 ,which was default bootstrap padding*/
+}
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.nav-item {
+  padding: 0 18px; /*left & right padding to navbar list*/
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-light", sans-serif;
+}
+/*Download buttons*/
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+/*Title image*/
+.title-image {
+  width: 60%; /*So that mobile image occupies 60% of total div width*/
+  transform: rotate(25deg); /*to rotate image*/
+  position: absolute;
+  /*For Z index to work , position has to be set, we want image behind feature section*/
+  right: 30%;
+}
+/*Features section*/
+#features {
+  padding: 7% 15%;
+  background-color: white;
+  position: relative;
+  /*z-index: 1; See video 88 for reason to comment this part*/
+  /*By default z-index is 0, 1 means more outwards, -1 means inwards*/
+  /*Use flowchart of css z-index in resources section of this course*/
+}
+.feature-box {
+  text-align: center;
+  padding: 5%;
+}
+.icon {
+  /*Cause fas is the common class between all 3 icons,so instead of icon fas could have been used*/
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+.icon:hover {
+  /*This is a pseudo class*/
+  color: #ff4c68;
+}
+/* Testimonial section */
+#testimonials {
+  background-color: #ef8172;
+  text-align: center;
+  color: #fff;
+}
+.testimonial-image {
+  width: 20%; /*Angela used 10%*/
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.carousel-item {
+  /*We moved the padding from #testimonial section to carousel-item here*/
+  /*So that all our items get padded & move slide show buttons further*/
+  padding: 7% 15%;
+}
+
+#press {
+  background-color: #ef8172;
+  text-align: center;
+  padding-bottom: 3%;
+}
+.press-logo {
+  /*Use Toggle extension to make this class of press logo*/
+  width: 15%;
+  margin: 20px 20px 50px 20px; /*Alternative 20px 20px 50px*/
+}
+
+/* Pricing section */
+#pricing {
+  padding: 100px; /* Or even 7% 15% would work*/
+  text-align: center;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+  /*Hit and trial no better way to find value*/
+}
+
+/*CTA Section*/
+#cta {
+  background-color: #ff4c68;
+  color: #fff;
+  padding: 7% 15%;
+  text-align: center;
+}
+
+.cta-heading {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+/*Footer Section*/
+
+#footer {
+  text-align: center;
+  padding: 7% 15%;
+}
+
+.social-icon {
+  margin: 20px 10px;
+}
+
+/*Media query for mobile and tablet screens*/
+@media (max-width: 1000px) {
+  #title {
+    text-align: center;
+  }
+  .title-image {
+    position: static;
+    transform: rotate(0deg);
+    /*To make position static & straight*/
+  }
+}
+/* Can use this to make navbar elements right -aligned instead of centre
+@media (max-width:780px) {
+  .nav-item {
+    text-align:right; 
+  }
+} */
